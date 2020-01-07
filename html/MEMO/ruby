@@ -1,0 +1,391 @@
+#Ruby Programming Language - Full Course
+#https://www.youtube.com/watch?v=t_ispmWmdjY
+
+print "Hello World"
+puts "is cool"
+print "Giraffe Academy"
+puts "is cool"
+
+puts "   /|"
+puts "  / |"
+puts " /  |"
+puts "/___|"
+
+Hello Worldis cool
+Giraffe Academyis cool
+   /|
+  / |
+ /  |
+/___|
+
+・変数
+→変数と””がある文では()を使う！
+name = "John"
+age  = "35"
+puts ("There once was a man named " + name)
+puts ("he was "+ age +" years old.")
+name = "Adam"
+age  = "40"
+puts ("There once was a man named " + name)
+puts ("he was "+ age +" years old.")
+=
+There once was a man named John
+he was 35 years old.
+There once was a man named Adam
+he was 40 years old.
+
+・改行
+puts "Giraffe\nAcademy"
+=
+Giraffe
+Academy
+
+・変数
+phrase = "Giraffe Academy"
+puts phrase
+= Giraffe Academy
+
+・大文字化
+phrase = "Giraffe Academy"
+puts phrase.upcase()
+= GIRAFFE ACADEMY
+puts "programming".upcase()
+= PROGRAMMING
+
+・小文字化
+phrase = "Giraffe Academy"
+puts phrase.downcase()
+= giraffe academy
+
+・隙間を詰める
+phrase = "   Giraffe Academy   "
+puts phrase.strip()
+= Giraffe Academy
+
+・文字カウント
+phrase = "Giraffe Academy"
+puts phrase.length()
+= 15
+
+・判定
+phrase = "Giraffe Academy"
+puts phrase.include? "Academy"
+= True
+phrase = "Giraffe Academy"
+puts phrase.include? "Academys"
+= False
+
+・文字の配列
+phrase = "Giraffe Academy"
+puts phrase[0]
+= G
+phrase = "Giraffe Academy"
+puts phrase[0,3]
+= Gir
+
+・文字の番号
+phrase = "Giraffe Academy"
+puts phrase.index("a")
+= 3
+phrase = "Giraffe Academy"
+puts phrase.index("ffe")
+= 4   開始する番号を返す
+
+・数学と数
+puts 5
+puts 2**5
+=
+5
+32
+
+・絶対値
+num = -20
+puts num.abs()
+= 20
+
+・四捨五入
+num = 20.3
+puts num.round()
+num = 20.5
+puts num.round()
+=
+20
+21
+
+・小数点切り上げ
+= ceil()
+
+・小数点切り下げ
+= floor()
+
+・Mathクラス
+
+・ルート
+puts Math.sqrt(36)
+= 6
+
+・log
+puts Math.log(1)
+= 0
+
+・計算上の小数点以下
+puts 10 / 7
+= 1
+puts 10 / 7.0
+=1.4285714285714286
+
+[xx.0]を付けると、小数点部分も計算する。
+
+・入力機能(改行)
+puts "Enter Your Name: "
+name = gets
+puts ("Hello " + name + ", you are cool!")
+=
+Enter Your Name:
+keita
+Hello keita
+, you are cool!      改行される・・・
+
+・入力機能(改行しないver)
+puts "Enter Your Name: "
+name = gets.chomp()
+puts ("Hello " + name + ", you are cool!")
+=
+Enter Your Name:
+keita
+Hello keita, you are cool!
+
+・数値入力
+puts "Enter a number: "
+num1 = gets.chomp()
+puts "Enter another number"
+num2 = gets.chomp()
+puts (num1 + num2)
+=
+Enter a number:
+12
+Enter another number
+34
+1234  文字扱い
+
+・数値入力　　.to_i = 整数(小数点切り捨て)　.to_f = 少数含む
+puts "Enter a number: "
+num1 = gets.chomp()
+puts "Enter another number"
+num2 = gets.chomp()
+puts (num1.to_i + num2.to_i)
+=
+Enter a number:
+12
+Enter another number
+34
+46
+
+・入力と出力
+puts "Enter a color: "
+color = gets.chomp()
+puts "Enter a plural noun: "
+plural_noun = gets.chomp()
+puts "Enter a celebrity: "
+celebrity = gets.chomp()
+
+puts ("Rose are "+ color)
+puts (plural_noun + " are blue")
+puts ("I love " + celebrity)
+=
+Enter a color:
+Blue
+Enter a plural noun:
+apple
+Enter a celebrity:
+Emma Watson
+Rose are Blue
+apple are blue
+I love Emma Watson
+
+・配列
+friends = Array["Kevin", "Karen", "Oscar"]
+puts friends
+=
+Kevin
+Karen
+Oscar
+puts friends[0]
+puts friends[-2]
+=
+Kevin
+Karen
+puts friends[0, 2] 　0以上2未満
+Kevin
+Karen
+
+・配列の上書き
+friends[0] = "Dwight"
+puts friends[0]
+=
+Dwight
+
+・配列の初期化
+friends = Array.new
+puts friends[0]
+=
+   (空っぽ)
+
+・配列と空っぽ空間
+friends[0] = "Michael"
+friends[5] = "Holly"
+puts friends
+=
+Michael
+
+
+
+
+Holly
+
+・配列のカウント
+friends = Array["Kevin", "Karen", "Oscar"]
+puts friends.length()
+=
+3
+
+・真偽チェック
+puts friends.include? "Karen"
+=
+true
+
+・配列の逆転
+puts friends.reverse()
+=
+Oscar
+Karen
+Kevin
+
+・配列　アルファベット順
+friends = Array["Kevin", "Oscar", "Andy", "Karen"]
+puts friends.sort()
+=
+Andy
+Karen
+Kevin
+Oscar
+
+・ハッシュ
+states = {
+  "Pennsylvania" => "PA",
+  "New York" => "NY",
+  "Oregon" => "OR"
+}
+puts states
+= {"Pennsylvania"=>"PA", "New York"=>"NY", "Oregon"=>"OR"}
+puts states["New York"]
+= NY
+
+states = {
+  :Pennsylvania => "PA",
+  "New York" => "NY",
+  "Oregon" => "OR"
+}
+puts states[:Pennsylvania]
+= PA
+
+states = {
+  1 => "PA",
+  "New York" => "NY",
+  "Oregon" => "OR"
+}
+
+puts states[1]
+= PA
+
+・メソッド(関数)
+def sayhi()
+  puts "Hello user"
+end
+
+sayhi
+= Hello user
+
+・関数と変数
+def sayhi(name, age)
+  puts ("Hello " + name + ", you are " + age.to_s)
+end
+
+sayhi("Mike", 73)
+= Hello Mike, you are 73
+
+・変数の初期設定
+def sayhi(name="no name", age=-1)
+  puts ("Hello " + name + ", you are " + age.to_s)
+end
+
+sayhi("Mike", 73)
+sayhi()
+=
+Hello Mike, you are 73
+Hello no name, you are -1
+
+・リターン文
+def cube(num)
+  num * num * num
+end
+puts cube(3)
+= 27
+
+・優先度
+ef cube(num)
+  num * num * num
+  5
+end
+puts cube(3)
+= 5　　　27は消えてしまう・・・
+
+・return(関数の終わり)
+def cube(num)
+  return num * num * num,
+  puts "hello"
+end
+puts cube(3)
+= 27　　　　　helloは表示されない
+
+
+・if文
+ismale = false
+
+if ismale
+  puts "You are male"
+else
+  puts "You are not male"
+end
+= You are not male
+
+
+ismale = true
+istall = false
+
+if ismale and istall
+  puts "You are a tall male"
+elsif ismale and !istall
+  puts "You are short male"
+elsif !ismale and istall
+  puts "You are not male but tall"
+else
+  puts "You are not male and not tall"
+end
+= You are short male
+
+
+・if文(比較演算子)
+def max(num1, num2, num3)
+  if num1 >= num2 and num1 >= num3
+    return num1
+  elsif num2 >= num1 and num2 >= num3
+    return num2
+  else
+    return num3
+  end
+ end
+puts max(10,12,5)
+= 12
+
+・計算機
