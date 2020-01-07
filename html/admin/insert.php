@@ -1,6 +1,4 @@
 <?php
-//insert.php
-
 if(isset($_POST["name"]))
 {
   $connect = new PDO("mysql:host=localhost;dbname=article;charset=utf8", "nakanishi", "kinniku0407");

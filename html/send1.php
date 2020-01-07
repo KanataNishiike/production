@@ -14,23 +14,17 @@
 
 </head>
 <body>
-
-
   <?php
-
   $message = "名前：" . $_POST["name"] . "\n本文：" . $_POST["message"];
   mb_language("Japanese");
   mb_internal_encoding("UTF-8");
-  if (!mb_send_mail("k_nakanishi@queserser.co.jp", $_POST["subject"], $message, "From:
+  if (!mb_send_mail("@queserser.co.jp", $_POST["subject"], $message, "From:
   " . $_POST["mail"])) {
   exit("error");
   }
-
   ?>
-
   <div class="text" style="text-align:center; margin-top:300px;">
     <p>Your e-mail has been sent!</p>
   </div>
-
 </body>
 </html>

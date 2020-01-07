@@ -1,10 +1,8 @@
 <?php
 session_start();
-
   include_once('../includes/connection.php');
-
   if (isset($_SESSION['logged_in'])){
-      ?>
+?>
 
   <html>
     <head>
@@ -20,7 +18,7 @@ session_start();
         <li style="display: inline-block; padding-left:40px;"><a href="edit.php" class="btn2">記事の編集</a></li><br />
         <li style="display: inline-block; padding-right:40px; padding-top:40px;"><a href="delete.php" class="btn3">記事の削除</a></li>
         <li style="display: inline-block; padding-left:40px;"><a href="delete_tag.php" class="btn2">タグの削除</a></li><br />
-        <li style="display: inline-block; padding-right:40px; padding-top:40px;;"><a href="logout.php" class="btn4">ログアウト</a></li>
+        <li style="display: inline-block; padding-right:40px; padding-top:40px;"><a href="logout.php" class="btn4">ログアウト</a></li>
         <li style="display: inline-block; padding-left:40px;"><a href="../blog.php" class="btn5">Blogページ</a></li><br />
         <li style="display: inline-block; padding-right:11px; padding-top:40px;;"><a href="voice.php" class="btn4">音声の作成</a></li>
       </ol>
@@ -28,14 +26,14 @@ session_start();
     </body>
   <html>
 
-    <?php
+<?php
 } else {
   if (isset($_POST['username'],$_POST['password'])){
     $username = $_POST['username'];
     $password = $_POST['password'];
 
     if(empty($username) or empty($password)){
-      $error = '大事な何かを忘れてるよ！！';
+      $error = '入力漏れがあります';
     } else {
       $query = $pdo->prepare("SELECT * FROM users WHERE user_name = ? AND user_password = ?");
 
@@ -50,22 +48,20 @@ session_start();
         header('Location:index.php');
         exit();
       } else {
-        $error = 'まちがってるよ！';
+        $error = '入力に誤りがあります';
       }
     }
   }
-
-  ?>
+?>
 
   <html>
       <head>
-        <title>関所</title>
+        <title>認証</title>
         <link rel="stylesheet" href="index_before.css">
       </head>
 
       <body>
         <div class="code">
-
           <br />
           <h3 style="color:#FF4F02;">【管理者認証】</h3>
           <?php if (isset($error)) { ?>
@@ -75,12 +71,12 @@ session_start();
           <form action="index.php" method="post" autocomplete="off">
               <div class="name">
               <input type="text" name="username" class="text" placeholder="">
-              <label>君の名は。:</label>
+              <label>name：</label>
               <span class="focus_line"><i></i></span>
               </div>
               <div class="word">
               <input type="password" name="password" class="text" placeholder="">
-              <label>あいことば :</label>
+              <label>password：</label>
               <span class="focus_line"><i></i></span>
               </div>
               <input type="submit" class="submit" value="入室" />
@@ -90,5 +86,4 @@ session_start();
         </div>
       </body>
     <html>
-
-  <?php } ?>
+<?php } ?>

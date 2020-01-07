@@ -10,7 +10,7 @@ if (isset($_SESSION[logged_in])){
       $tag     = $_POST['tag'];
       $tags    = explode(", ",$tag);
       if (empty($title) or empty($content)){
-        $error = '未入力があるお！';
+        $error = '未入力があります';
       } else {
         $query = $pdo->prepare('INSERT INTO articles (article_title,article_content,article_timestamp) VALUES (?,?,?)');
         $query->bindValue(1,$title);
@@ -63,7 +63,6 @@ if (isset($_SESSION[logged_in])){
       <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/css/bootstrap-tokenfield.min.css">
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/bootstrap-tokenfield.js"></script>
-
    </head>
 
   <body>
@@ -77,16 +76,16 @@ if (isset($_SESSION[logged_in])){
               <div class="text">
                 <form action="add.php" method="post" autocomplete="off">
                 <div class="input"><label class="title">
-                    <input type="text" name="title" placeholder="たいとる！" /><br />
+                    <input type="text" name="title" placeholder="タイトル" /><br />
                   </label></div>
                 <div class="form-group">
                   <label>Enter article tag!</label>
                   <input type="text" name="tag" id="tag" class="form-control" />
                 </div>
-                <textarea id="editor" value="ないよう！" name="content" style="margin-bottom:30px;"></textarea>
+                <textarea id="editor" value="内容" name="content" style="margin-bottom:30px;"></textarea>
                 <br/>
               </div>
-                <input type="submit" class="btn2" value="押！" />
+                <input type="submit" class="btn2" value="決定" />
               </form>
               <script src="ckeditor/ckeditor.js"></script>
               <script src="ckfinder/ckfinder.js"></script>

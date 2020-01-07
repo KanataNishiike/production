@@ -29,9 +29,7 @@ $articles = $article->fetch_all();
 $sql = "UPDATE user_count SET counts = counts+1 WHERE article_id = 0";
 $query = $pdo->prepare($sql);
 $query->execute();
-
- ?>
-
+?>
 
 <!doctype html>
 <html lang="ja" dir="ltr">
@@ -48,26 +46,25 @@ $query->execute();
 
    <meta mame="description" content="Blogページです">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="includes/common.js"></script>
-    <link rel="stylesheet" href="css/blog.css" type="text/css">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/css/bootstrap-tokenfield.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/bootstrap-tokenfield.js"></script>
-    <script src="includes/navigation.js"></script>
-    <script src="includes/common.js"></script>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link href="css/bootstrap.min.css" rel="stylesheet">
+   <script src="js/bootstrap.min.js"></script>
+   <script src="includes/common.js"></script>
+   <script src="includes/navigation.js"></script>
+   <script src="includes/common.js"></script>
+   <link rel="stylesheet" href="css/blog.css" type="text/css">
+   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/css/bootstrap-tokenfield.min.css">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/bootstrap-tokenfield.js"></script>
  </head>
 
 <body>
-  <span style="position: absolute; left: 40px; top: 5px; font-family: serif; font-weight: 800;">音声再生</span>
+  <span style="position:absolute; left:40px; top:5px; font-family:serif; font-weight:800;">音声再生</span>
   <audio src="mp3/blog.mp3"></audio>
   <audio preload="metadata" controls style="margin-left: 15px; margin-top: 30px; width:280px;">
     <source src="mp3/blog.mp3" type="audio/mp3">
@@ -94,13 +91,12 @@ $query->execute();
     <div clas="row">
     <div class="col-xs-12 csl-sm-9" style="width:80%; margin-left: -45px; margin-right: 45px;">
     <div class="col-xs-12 wrap">
-
       <form action="blog.php" method="post" autocomplete="off">
         <div class="form-group">
           <label>タグ検索</label>
           <input type="text" name="tag" id="tag" class="form-control" style="width:300px;"/>
         </div>
-        <input type="submit" value="検索！" style="margin-bottom:30px;"/>
+        <input type="submit" value="検索" style="margin-bottom:30px;"/>
       </form>
           <script>
           $(document).ready(function(){
@@ -221,20 +217,13 @@ $query->execute();
       <div class="left" style="padding-top:3%;">
         <ul>
           <li>
-            <a href="index.html"><img src="image/green-star.png" height="50px" width="50px"
-              style="margin-bottom: 5px;">トップ</a>
+            <a href="index.html"><img src="image/green-star.png" height="50px" width="50px" style="margin-bottom: 5px;">トップ</a>
           </li>
           <li>
-            <a href="book.html"><img src="image/blue-star.png" height="50px" width="50px"
-              style="margin-bottom: 5px;"><span class="book">本棚</span></a>
+            <a href="book.html"><img src="image/blue-star.png" height="50px" width="50px" style="margin-bottom: 5px;"><span class="book">本</span></a>
           </li>
           <li>
-            <a href="fashion.html"><img src="image/skyblue-star.png" height="50px" width="50px"
-              style="margin-bottom: 5px;">ファッション</a>
-          </li>
-          <li>
-            <a href="test_php/index.php"><img src="image/skyblue-star.png" height="50px" width="50px"
-              style="margin-bottom: 5px;">test</a>
+            <a href="fashion.html"><img src="image/skyblue-star.png" height="50px" width="50px" style="margin-bottom: 5px;">ファッション</a>
           </li>
         </ul>
       </div>
@@ -247,16 +236,12 @@ $query->execute();
             <img src="image/orange-star.png" height="50px" width="50px" style="margin-bottom: 10px;"><span class="contact" style="color: black;">お問い合わせ</span>
           </li>
           <li>
-            <a href="admin/index.php"><img src="image/orange-star.png" height="50px" width="50px" style="margin-bottom: 10px; color:black; ">あどみん！</a>
-          </li>
-          <li>
-            <a href="index_like.php"><img src="image/orange-star.png" height="50px" width="50px" style="margin-bottom: 10px; color:black;">test room！</a>
+            <a href="admin/index.php"><img src="image/orange-star.png" height="50px" width="50px" style="margin-bottom: 10px; color:black; ">管理者</a>
           </li>
         </ul>
       </div>
     </div>
 </body>
-
 <style>
 a{
   color:black;

@@ -1,23 +1,19 @@
 <?php
 session_start();
-
 include_once('../includes/connection.php');
 include_once('../includes/article.php');
 
 $article = new Article;
 
 if (isset($_SESSION['logged_in'])){
-
   if (isset($_GET['id'])){
     $id = $_GET['id'];
     $query = $pdo->prepare('SELECT * FROM articles WHERE article_id = ? ');
     $query->bindValue(1,$id);
     $query->execute();
-
     $row = $query->fetch();
     if(empty($row)) {
       // エラー処理
-
       exit;
     }
 
@@ -27,21 +23,18 @@ if (isset($_SESSION['logged_in'])){
 
     if (isset($_POST['id'])){
         $id = $_POST['id'];
-
         $query = $pdo->prepare('DELETE FROM articles WHERE article_id = ?');
         $query->bindValue(1,$id);
         $query->execute();
-
         header('Location: delete.php');
     }
 
     $articles = $article->fetch_all();
-
-    ?>
+?>
 
     <html>
       <head>
-        <title>始末屋</title>
+        <title>削除</title>
         <link rel="stylesheet" href="delete.css">
 
       </head>
@@ -67,7 +60,7 @@ if (isset($_SESSION['logged_in'])){
             <p>タイトル：<?php echo $title; ?></p>
             <textarea id="editor" name="content" style="margin-bottom:30px;"><?php echo $content; ?></textarea>
             <br/>
-            <input type="submit" class="btn1" value="消！" style="background-color:#000; border:#000; margin-top:40px; margin-bottom:70px;" />
+            <input type="submit" class="btn1" value="削除" style="background-color:#000; border:#000; margin-top:40px; margin-bottom:70px;" />
           </form>
           <script src="ckeditor/ckeditor.js"></script>
           <script src="ckfinder/ckfinder.js"></script>

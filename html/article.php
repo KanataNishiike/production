@@ -19,8 +19,7 @@ if (isset($_GET['id'])){
   $query->bindValue(1,$id);
   $query->execute();
   $count = $query->fetch();
-
-  ?>
+?>
 
 <html lang="ja" dir="ltr">
  <head>
